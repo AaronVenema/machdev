@@ -6,13 +6,14 @@ const {
   getDepartmentOfProject,
   getEmployeesOfProject,
   createProject,
+  updateProject,
   putDepartmentOfProject,
   putEmployeeOnProject,
   deleteProjectById,
   removeEmployeeFromProject,
 } = require("../../controllers/project-controller");
 
-//route for gettign every project
+//route for getting every project
 router.route("/").get(getAllProjects);
 // route that gets the department of a project
 router.route("/:id/department/").get(getDepartmentOfProject);
@@ -24,6 +25,8 @@ router.route("/:id").get(getProjectById);
 // route for creating a new project
 router.route("/").post(createProject);
 
+// route for updating a proejct
+router.route("/:id").put(updateProject);
 // route for changing the department of a project
 router.route("/:projectId/department/:departmentId").put(putDepartmentOfProject);
 // route for adding an employee to a project
