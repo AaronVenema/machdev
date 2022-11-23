@@ -69,19 +69,29 @@ const authenticateLogin = async (req, res) => {
     .json({ result: "success", employee: modifiedEmployee, token: token })
 }
 
-const updateEmployeebyId = async (req, res) => {
+const updateEmployeeById = async (req, res) => {
   try {
-    const getByIdQuery = await Employee.findOneAndUpdate(
+    const updateByIdQuery = await Employee.findOneAndUpdate(
       {_id: req.params.id},
       { $set: req.body },
       { runValidators: true, new: true }
     );
-    res.status(200).json({ result: "success", payload: getByIdQuery });
+    res.status(200).json({ result: "success", payload: updateByIdQuery });
   }
   catch(err) {
     res.status(400).json({ message: "No employee found with that ID!" });
   }
 };
+
+const deleteEmployeeById = async (req,res) => {
+  try {
+    const delByIdQuery = Employee.findOneAndRemove({ _id: req.params.id });
+    res.status(200).json({ result: "success", payload: delByIdQuery });
+  }
+  catch(err) {
+    res.status(400).json({ message: "No employee found with that ID!" });
+  }
+}
 
 
 module.exports = { 
