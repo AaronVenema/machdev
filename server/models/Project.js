@@ -20,6 +20,9 @@ const projectSchema = new Schema(
     link: {
         type: String,
     },
+    completed: {
+        type: Boolean,
+    }
   },
   // set this to use virtual below
   {
