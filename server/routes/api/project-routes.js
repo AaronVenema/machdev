@@ -10,7 +10,7 @@ const {
   putEmployeeOnProject,
   deleteProjectById,
   removeEmployeeFromProject,
-} = require("../../controllers/employee-controller");
+} = require("../../controllers/project-controller");
 
 //route for gettign every project
 router.route("/").get(getAllProjects);
