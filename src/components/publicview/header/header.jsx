@@ -11,11 +11,11 @@ function Header (){
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-            <Nav.Link as={Link} to="/departmentView">MachDev Departments</Nav.Link>
-            <Nav.Link as={Link} to="/employeeView">MachDev Employees</Nav.Link>
-            <Nav.Link as={Link} to="/completedProjects" >MachDev Projects</Nav.Link>
-            <Nav.Link as={Link} to="/companyInfo">MachDev Info</Nav.Link>
-            <Nav.Link as={Link} to="/serviceRequest">MachDev Service Request</Nav.Link>
+            <Nav.Link as={Link} to="/companyInfo">Info</Nav.Link>
+            <Nav.Link as={Link} to="/completedProjects" >MachDev Works</Nav.Link>
+            <Nav.Link as={Link} to="/departmentView">Departments</Nav.Link>
+            <Nav.Link as={Link} to="/employeeView">Employees</Nav.Link>
+            <Nav.Link as={Link} to="/serviceRequest">Service Request</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

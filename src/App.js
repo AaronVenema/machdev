@@ -10,7 +10,7 @@ import EmployeeView from "./components/publicview/employeeviewer/employeeview";
 import DepartmentView from "./components/publicview/departmentviewer/departmentview";
 import CompletedProjects from './components/publicview/completedprojects/completedprojects';
 import Homepage from "./components/publicview/homepage/homepage";
-// import CompanyInfo from './components/publicview/companyinfo/companyinfo'
+import CompanyInfo from './components/publicview/companyinfo/companyinfo'
 import ServiceRequest from "./components/publicview/servicerequest/servicerequest"
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       <Route path="/employeeView" element={<EmployeeView />} />
       <Route path="/departmentView" element={<DepartmentView />} />
       <Route path="/completedProjects" element={<CompletedProjects />} />
-      {/* <Route path="/companyInfo" element={<CompanyInfo />} /> */}
+      <Route path="/companyInfo" element={<CompanyInfo />} />
       <Route path="/serviceRequest" element={<ServiceRequest />} />
       <Route path="*" element={<Navigate to="/"/>} />
     </Routes>
