@@ -22,6 +22,10 @@ const projectSchema = new Schema(
     },
     completed: {
         type: Boolean,
+    },
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'Department'
     }
   },
   // set this to use virtual below
