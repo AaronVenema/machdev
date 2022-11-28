@@ -2,7 +2,7 @@ const Employee = require("../models/Employee");
 const jwt = require("jsonwebtoken");
 const cookie = require("cookie");
 const bcrypt = require("bcrypt");
-const connection = require("../config/connection");
+const connection = require("../config/connections");
 const { get } = require("mongoose");
 
 require("dotenv").config();
@@ -14,16 +14,6 @@ const getAllEmployees = async (req, res) => {
   }
   catch(err) {
     res.status(400).json({ message: "No employees found!" });
-  }
-}
-
-const getEmployeeById = async (req, res) => {
-  try {
-    const getByIdQuery = await Employee.findById(req.params.id)
-    res.status(200).json({ result: "success", payload: getByIdQuery });
-  }
-  catch(err) {
-    res.status(400).json({ message: "No employee found with that ID!" });
   }
 }
 
@@ -43,10 +33,20 @@ const lookupEmployeeByToken = async (req, res) => {
   return res.status(200).json({ result: "success", payload: employee });
 };
 
+const getEmployeeById = async (req, res) => {
+  try {
+    const getByIdQuery = await Employee.findById(req.params.id)
+    res.status(200).json({ result: "success", payload: getByIdQuery });
+  }
+  catch(err) {
+    res.status(400).json({ message: "No employee found with that ID!" });
+  }
+}
+
 const createEmployee = async (req, res) => {
   try {
     const createQuery = await Employee.create(req.body);
-    res.status(200).json(sample);
+    res.status(200).json(createQuery);
   }
   catch(err) {
     res.status(400).json({ message: "Unable to create an employee" });
@@ -85,7 +85,9 @@ const updateEmployeeById = async (req, res) => {
 
 const deleteEmployeeById = async (req,res) => {
   try {
-    const delByIdQuery = Employee.findOneAndRemove({ _id: req.params.id });
+    console.log(req.params);
+    const delByIdQuery = await Employee.findOneAndDelete({ _id: req.params.id });
+
     res.status(200).json({ result: "success", payload: delByIdQuery });
   }
   catch(err) {
@@ -95,9 +97,9 @@ const deleteEmployeeById = async (req,res) => {
 
 
 module.exports = { 
-  getAllEmployees, 
-  getEmployeeById,
+  getAllEmployees,
   lookupEmployeeByToken,
+  getEmployeeById,
   createEmployee,
   authenticateLogin,
   updateEmployeeById,

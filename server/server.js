@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const db = require("./config/connection");
+const db = require("./config/connections");
 const routes = require("./routes"); // <- Will need to create routes folder and its contents later
 
 const app = express();
