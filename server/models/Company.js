@@ -12,7 +12,8 @@ const companySchema = new Schema(
         required: true,
       },
     departments: {
-        type: [Department]
+      type: [Schema.Types.ObjectId],
+      ref: "Department"
     }
   },
   // set this to use virtual below

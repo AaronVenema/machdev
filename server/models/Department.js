@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const Employee = require('./Employee');
 const Project = require('./Project');
-// import schema from Book.js
+//Add icon field from react icons
 const departmentSchema = new Schema(
   {
     name: {
@@ -13,13 +13,19 @@ const departmentSchema = new Schema(
         required: true,
       },
     workers: {
-        type: [Employee]
+        type: [Schema.Types.ObjectId],
+        ref: "Employee"
     },
     currentProjects:{
-        type: [Project]
+      type: [Schema.Types.ObjectId],
+      ref: "Project"
     },
     completedProjects: {
-        type: [Project]
+      type: [Schema.Types.ObjectId],
+      ref: "Project"
+    },
+    icon:{
+      type: String
     }
   },
   // set this to use virtual below

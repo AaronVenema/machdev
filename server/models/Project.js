@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 const Employee = require('./Employee');
-// import schema from Book.js
 const projectSchema = new Schema(
   {
     name: {
@@ -12,7 +11,8 @@ const projectSchema = new Schema(
         required: true,
       },
     workers: {
-        type: [Employee]
+      type: [Schema.Types.ObjectId],
+      ref: 'Employee'
     },
     image: {
         type: String,
@@ -22,6 +22,9 @@ const projectSchema = new Schema(
     },
     completed: {
         type: Boolean,
+    },
+    icon:{
+      type: String,
     },
     owner: {
         type: Schema.Types.ObjectId,
