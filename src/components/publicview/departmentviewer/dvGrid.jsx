@@ -5,30 +5,30 @@ const DvGrid = () => (
   <Grid columns={3} divided>
     <Grid.Row>
       <Grid.Column>
-        <Image src="https://via.placeholder.com/150" />
-        <Segment>Developers</Segment>
+        <Image src="/assets/administrator-logo.png" />
+        <Segment>Administrator</Segment>
       </Grid.Column>
       <Grid.Column>
-        <Image src="https://via.placeholder.com/150" />
-        <Segment>Developers</Segment>
+        <Image src="/assets/human-resources-logo.png"  />
+        <Segment>HR</Segment>
       </Grid.Column>
       <Grid.Column>
-        <Image src="https://via.placeholder.com/150" />
-        <Segment>Developers</Segment>
+        <Image src="/assets/managment-logo.png"  />
+        <Segment>Management</Segment>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
       <Grid.Column>
-        <Image src="https://via.placeholder.com/150" />
-        <Segment>Developers</Segment>
+        <Image src="/assets/sales-logo.png"  />
+        <Segment>Sales</Segment>
       </Grid.Column>
       <Grid.Column>
-        <Image src="https://via.placeholder.com/150" />
-        <Segment>Developers</Segment>
+        <Image src="/assets/Marketing-logo.png"  />
+        <Segment>Marketing</Segment>
       </Grid.Column>
       <Grid.Column>
-        <Image src="https://via.placeholder.com/150" />
-        <Segment>Developers</Segment>
+        <Image src="/assets/devops-logo.png" />
+        <Segment>DevOps</Segment>
       </Grid.Column>
     </Grid.Row>
   </Grid>

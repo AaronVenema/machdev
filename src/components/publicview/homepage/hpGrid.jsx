@@ -16,7 +16,7 @@ I'm your worst nightmare, bitch! Wow, so your origin is what? You fell into a va
 
     
       <Grid.Column width={4}>
-        <Image src="https://via.placeholder.com/150" />
+        <Image src="/assets/machdev-logo.png" />
       </Grid.Column>
    
       <Grid.Column width={4}>
