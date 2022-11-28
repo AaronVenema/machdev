@@ -5,6 +5,7 @@ const connection = require("../config/connections");
 require("dotenv").config();
 
 const getAllDepartments = async (req, res) => {
+  console.log("Deps");
   try {
     const getAllQuery = await Department.find({});
     res.status(200).json({ result: "success", payload: getAllQuery });
