@@ -4,7 +4,7 @@ const {
   getAllDepartments, 
   getDepartmentById,
   createDepartment,
-  updateDepartment,
+  updateDepartmentById,
   deleteDepartmentById,
 } = require("../../controllers/department-controller")
 
@@ -17,7 +17,7 @@ router.route("/:id").get(getDepartmentById);
 router.route("/").post(createDepartment);
 
 // route for updating a department by its id
-router.route("/:id").put(updateDepartment);
+router.route("/:id").put(updateDepartmentById);
 
 // route for deleting a department by its id
 router.route("/:id").delete(deleteDepartmentById);
