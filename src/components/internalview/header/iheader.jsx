@@ -3,7 +3,7 @@ import {Container, Navbar, Nav} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 
-function Header (){
+function IHeader (){
     return(
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container className="text-center">
@@ -20,6 +20,6 @@ function Header (){
       </Navbar>
     )
 }
-export default Header
+export default IHeader
 
 // as={Link} to="/currentprojects" formating for links in pages needs to be added to <Nav.Link >MachDev Projects</Nav.Link> as <Nav.Link as={Link} to="/currentprojects">MachDev Projects</Nav.Link>
