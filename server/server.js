@@ -9,11 +9,16 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build"))); // <- This route may need to change in the fututre
-}
 
+app.use(express.static(path.join(__dirname, "../build"))); // <- This route may need to change in the fututre
+// if (process.env.NODE_ENV === "production") {
+// }
 app.use(routes);
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+
+
 
 db.once("open", () => {
   app.listen(PORT, () => console.log(`Now listening on localhost: ${PORT}`));
