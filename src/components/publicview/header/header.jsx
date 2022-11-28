@@ -16,6 +16,7 @@ function Header (){
             <Nav.Link as={Link} to="/departmentView">Departments</Nav.Link>
             <Nav.Link as={Link} to="/employeeView">Employees</Nav.Link>
             <Nav.Link as={Link} to="/serviceRequest">Service Request</Nav.Link>
+            <Nav.Link as={Link} to="/employeeLogin">Employee Login</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
