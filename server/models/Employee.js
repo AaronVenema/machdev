@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-//add icon per title
 const employeeSchema = new Schema(
   {
     username: {

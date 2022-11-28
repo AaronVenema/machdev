@@ -23,7 +23,7 @@ router.route("/").post(createEmployee);
 router.route("/auth").post(authenticateLogin);
 
 // route for updating an employee by its id
-router.route("/:id").put(updateEmployee);
+router.route("/:id").put(updateEmployeeById);
 
 // route for deleting an employee by its id
 router.route("/:id").delete(deleteEmployeeById);

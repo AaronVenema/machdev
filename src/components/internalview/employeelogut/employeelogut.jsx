@@ -1,17 +1,17 @@
 import React from "react"
-import IHpGrid from "./hpGrid"
+import LogoutGrid from "./logoutGrid"
 import { Container } from "semantic-ui-react"
 import IHeader from "../header/iheader"
 import IFooter from "../footer/ifooter"
-function IHomepage() {
+function EmployeeLogin() {
   return (
     <Container>
       <IHeader />
-      <IHpGrid />
+      <LogoutGrid />
       <IFooter />
     </Container>
      
   )
 }
 
-export default IHomepage
+export default EmployeeLogin

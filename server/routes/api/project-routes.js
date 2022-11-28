@@ -16,7 +16,7 @@ const {
 //route for getting every project
 router.route("/").get(getAllProjects);
 // route that gets the department of a project
-router.route("/:id/department/").get(getDepartmentOfProject);
+router.route("/:id/department").get(getDepartmentOfProject);
 // route that gets all the employees on a project
 router.route("/:id/employees").get(getEmployeesOfProject);
 // routes that gets a project by its id
