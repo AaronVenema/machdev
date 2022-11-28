@@ -1,4 +1,5 @@
 const Department = require("../models/Department");
+const Project = require("../models/Project");
 const connection = require("../config/connections");
 
 require("dotenv").config();
@@ -33,33 +34,58 @@ const createDepartment = async (req, res) => {
   }
 }
 
+const putCurrProject = async (req, res) => {
+  try {
+    try {
+      await Project.findById(req.params.projectId);
+      const updateByIdQuery = await Department.findOneAndUpdate(
+        { _id: req.params.id },
+        { $addToset: req.body },
+        { runValidators: true, new: true }
+      );
+      res.status(200).json({ result: "success", payload: updateByIdQuery});
+    }
+    catch(err) {
+      res.status(400).json({ message: "No project found with that ID!" });
+    }
+  }
+  catch(err) {
+    res.status(400).json({ message: "No department found with that ID!" });
+  }
+};
+
+const putCompProject = async (req, res) => {
+  try {
+    try {
+      await Project.findById(req.params.projectId);
+      const updateByIdQuery = await Department.findOneAndUpdate(
+        { _id: req.params.id },
+        { $pull: req.body },
+        { $addToset: {completedProjects: req.body}},
+        { runValidators: true, new: true }
+      );
+      res.status(200).json({ result: "success"});
+    }
+    catch(err) {
+      res.status(400).json({ message: "No project found with that ID!" });
+    }
+   }
+  catch(err) {
+    res.status(400).json({ message: "No department found with that ID!" });
+  }
+};
+
 const updateDepartmentById = async (req, res) => {
   try {
-    // let updateByIdQuery;
-    // let holder = req.body.name;
-    // console.log(`>>>${holder}`);
-    // if(req.body.workers && (!req.body.name && !req.body.description)) {
-    //   updateByIdQuery = await Department.findOneAndUpdate(
-    //     {_id: req.params.id},
-    //     { $addToSet: req.body.workers },
-    //     { runValidators: true, new: true }
-    //   );
-    // }
-    // else {
-    //   updateByIdQuery = await Department.findOneAndUpdate(
-    //     {_id: req.params.id},
-    //     { $set: req.body },
-    //     { runValidators: true, new: true }
-    //   );
-    // }
     const updateByIdQuery = await Department.findOneAndUpdate(
-          {_id: req.params.id},
-          { $set: req.body },
-          { runValidators: true, new: true }
-        );
+      {_id: req.params.id},
+      { $set: req.body },
+      { runValidators: true, new: true }
+    );
     res.status(200).json({ result: "success", payload: updateByIdQuery });
   }
   catch(err) {
+    console.log(err);
     res.status(400).json({ message: "No department found with that ID!" });
   }
 };
@@ -80,6 +106,8 @@ module.exports = {
   getAllDepartments, 
   getDepartmentById,
   createDepartment,
+  putCurrProject,
+  putCompProject,
   updateDepartmentById,
   deleteDepartmentById,
 }

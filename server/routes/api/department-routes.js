@@ -4,6 +4,8 @@ const {
   getAllDepartments, 
   getDepartmentById,
   createDepartment,
+  putCurrProject,
+  putCompProject,
   updateDepartmentById,
   deleteDepartmentById,
 } = require("../../controllers/department-controller")
@@ -16,6 +18,10 @@ router.route("/:id").get(getDepartmentById);
 // route for creating a new department
 router.route("/").post(createDepartment);
 
+// route for adding a project to a department's current projects
+router.route("/:id/current").put(putCurrProject);
+// route for adding a project to a department's completed projects from current projects
+router.route("/:id/complete").put(putCompProject);
 // route for updating a department by its id
 router.route("/:id").put(updateDepartmentById);
 
