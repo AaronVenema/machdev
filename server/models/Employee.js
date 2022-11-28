@@ -23,6 +23,12 @@ const userSchema = new Schema(
     },
     title:{
         type: String
+    },
+    firstName:{
+      type: String
+    },
+    lastName:{
+      type: String
     }
   },
   // set this to use virtual below

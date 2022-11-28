@@ -2,7 +2,7 @@ const proj = [
     {
         name: "Project1",
         description: "This is describing 1",
-        works: [],
+        workers: [],
         image: "placeholder.jpg",
         link: "www.youtube.com",
         completed: true,
@@ -10,7 +10,7 @@ const proj = [
     {
         name: "Projec2",
         description: "this is describing 2",
-        works: [],
+        workers: [],
         image: "placeholder.jpg",
         link: "www.youtube.com",
         completed: true,
