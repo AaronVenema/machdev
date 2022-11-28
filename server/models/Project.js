@@ -11,9 +11,12 @@ const projectSchema = new Schema(
         type: String,
         required: true,
       },
-    workers: {
-        type: [Employee]
-    },
+    workers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Employee",
+      }
+    ],
     image: {
         type: String,
     },
