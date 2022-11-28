@@ -1,14 +1,14 @@
 import React from "react"
 import CurrentProjectsGrid from "./CurrentProjectsGrid"
 import { Container } from "semantic-ui-react"
-import Header from "../header/header"
-import Footer from "../footer/footer"
+import IHeader from "../header/iheader"
+import IFooter from "../footer/ifooter"
 function CurrentProjects() {
   return (
     <Container>
-      <Header />
+      <IHeader />
       <CurrentProjectsGrid/>
-      <Footer />
+      <IFooter />
     </Container>
      
   )

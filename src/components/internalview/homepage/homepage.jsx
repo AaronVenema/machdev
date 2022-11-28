@@ -1,14 +1,14 @@
 import React from "react"
 import IHpGrid from "./hpGrid"
 import { Container } from "semantic-ui-react"
-import Header from "../header/header"
-import Footer from "../footer/footer"
+import IHeader from "../header/iheader"
+import IFooter from "../footer/ifooter"
 function IHomepage() {
   return (
     <Container>
-      <Header />
+      <IHeader />
       <IHpGrid />
-      <Footer />
+      <IFooter />
     </Container>
      
   )

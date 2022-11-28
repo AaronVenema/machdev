@@ -1,14 +1,14 @@
 import React from "react"
 import LogoutGrid from "./logoutGrid"
 import { Container } from "semantic-ui-react"
-import Header from "../header/header"
-import Footer from "../footer/footer"
+import IHeader from "../header/iheader"
+import IFooter from "../footer/ifooter"
 function EmployeeLogin() {
   return (
     <Container>
-      <Header />
+      <IHeader />
       <LogoutGrid />
-      <Footer />
+      <IFooter />
     </Container>
      
   )
