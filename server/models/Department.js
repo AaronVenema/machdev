@@ -12,15 +12,24 @@ const departmentSchema = new Schema(
         type: String,
         required: true,
       },
-    workers: {
-        type: [Employee]
-    },
-    currentProjects:{
-        type: [Project]
-    },
-    completedProjects: {
-        type: [Project]
-    }
+    workers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Employee",
+      }
+    ],
+    currentProjects: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Project",
+      }
+    ],
+    completedProjects: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Project",
+      }
+    ],
   },
   // set this to use virtual below
   {

@@ -85,7 +85,6 @@ const updateEmployeeById = async (req, res) => {
 
 const deleteEmployeeById = async (req,res) => {
   try {
-    console.log(req.params);
     const delByIdQuery = await Employee.findOneAndDelete({ _id: req.params.id });
 
     res.status(200).json({ result: "success", payload: delByIdQuery });
