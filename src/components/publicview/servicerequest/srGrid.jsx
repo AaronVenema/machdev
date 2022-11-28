@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Form } from 'semantic-ui-react'
 
 const SrGrid = () => (
@@ -6,6 +6,7 @@ const SrGrid = () => (
         <Form.Group widths='equal'>
           <Form.Input fluid label='First name' placeholder='First name' />
           <Form.Input fluid label='Last name' placeholder='Last name' />
+          <Form.Input fluid label='Email' placeholder='Email' />
         </Form.Group>
         <Form.TextArea label='Request' placeholder='What is your request?' />
         <Form.Button>Submit</Form.Button>

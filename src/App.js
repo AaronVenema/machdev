@@ -12,6 +12,7 @@ import CompletedProjects from './components/publicview/completedprojects/complet
 import Homepage from "./components/publicview/homepage/homepage";
 import CompanyInfo from './components/publicview/companyinfo/companyinfo'
 import ServiceRequest from "./components/publicview/servicerequest/servicerequest"
+import EmployeeLogin from "./components/publicview/employeelogin/employeelogin"
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
       <Route path="/completedProjects" element={<CompletedProjects />} />
       <Route path="/companyInfo" element={<CompanyInfo />} />
       <Route path="/serviceRequest" element={<ServiceRequest />} />
+      <Route path="/employeeLogin" element={<EmployeeLogin />} />
       <Route path="*" element={<Navigate to="/"/>} />
     </Routes>
 </Router>
