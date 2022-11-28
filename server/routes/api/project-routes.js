@@ -6,7 +6,7 @@ const {
   getDepartmentOfProject,
   getEmployeesOfProject,
   createProject,
-  updateProject,
+  updateProjectById,
   putDepartmentOfProject,
   putEmployeeOnProject,
   deleteProjectById,
@@ -26,7 +26,7 @@ router.route("/:id").get(getProjectById);
 router.route("/").post(createProject);
 
 // route for updating a proejct
-router.route("/:id").put(updateProject);
+router.route("/:id").put(updateProjectById);
 // route for changing the department of a project
 router.route("/:projectId/department/:departmentId").put(putDepartmentOfProject);
 // route for adding an employee to a project

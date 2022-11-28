@@ -4,7 +4,7 @@ const {
   getAllCompanies, 
   getCompanyById,
   createCompany,
-  updateCompany,
+  updateCompanyById,
   deleteCompanyById,
 } = require("../../controllers/company-controller")
 
@@ -17,7 +17,7 @@ router.route("/:id").get(getCompanyById);
 router.route("/").post(createCompany);
 
 // route for updating a company by its id
-router.route("/:id").put(updateCompany);
+router.route("/:id").put(updateCompanyById);
 
 // route for deleting a company by its id
 router.route("/:id").delete(deleteCompanyById);
