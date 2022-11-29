@@ -7,7 +7,7 @@ const Statistics = () => (
       <Statistic.Value text >
         <br></br>
         <br></br>
-        <Icon name='building'/></Statistic.Value>
+        <Icon name='building outline' className='bg-dark text-white'/></Statistic.Value>
       <Statistic.Label className='text-white'>12,000 Businesses</Statistic.Label>
     </Statistic>
    
