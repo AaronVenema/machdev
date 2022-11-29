@@ -33,7 +33,7 @@ function EmployeeView() {
         <Grid.Row>
           {console.log(data)}
           {data && data.map((single) =>
-          <EvGrid single={{...single,pic: empDef[single.title.replace(/\s+/g,"")]}} key={single.name} />
+          <EvGrid single={{...single,pic: empDef[single.title.replace(/\s+/g,"")]}} key={single._id} />
           )}
         </Grid.Row>
       </Grid>
