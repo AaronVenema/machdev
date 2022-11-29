@@ -18,7 +18,8 @@ async function seedStuff() {
 
     console.log("Seeding Employees");
     for(let e of employees){
-        Employee.create({...e})
+        console.log(e.firstName);
+        await Employee.create({...e})
     }
     console.log("Employees Inserted ");
     console.log("Seeding Departments");
