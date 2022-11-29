@@ -10,7 +10,9 @@ const empDef = {
   "CFO": "cfo-logo.png",
   "CIO": "cio-logo.png",
   "SEO": "seo-logo.png",
-  "ALP": "alp-logo.png"
+  "ALP": "alp-logo.png",
+  "VikingsFanBoy": "gary-stumped.png",
+  "NodemonGlobally": "katys-afternoon.png",
 }
 
 
