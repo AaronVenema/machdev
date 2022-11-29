@@ -6,9 +6,9 @@ import Footer from "../footer/footer"
 
 const empDef = {
   "Lead": "lead-logo.png",
-  "Head Architect": "head-architect-logo.pnmg",
+  "HeadArchitect": "head-architect-logo.png",
   "CFO": "cfo-logo.png",
-  "CIO": "cio",
+  "CIO": "cio-logo.png",
   "SEO": "seo-logo.png",
   "ALP": "alp-logo.png"
 
@@ -24,7 +24,7 @@ function EmployeeView() {
       .then(response => response.json())
       .then(datas => setData(datas.payload));
   }, []);
-
+  // console.log(empDef['Head Architect']);
   return (
     <Container>
       <Header />
@@ -32,7 +32,7 @@ function EmployeeView() {
         <Grid.Row>
           {console.log(data)}
           {data && data.map((single) =>
-            <EvGrid single={{...single,pic: empDef[single.title]}} key={single.name} />
+          <EvGrid single={{...single,pic: empDef[single.title.replace(/\s+/g,"")]}} key={single.name} />
           )}
         </Grid.Row>
       </Grid>
