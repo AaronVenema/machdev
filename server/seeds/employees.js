@@ -92,6 +92,26 @@ const emps = [
         salary: 1000000,
         title: "CFO"
     },
+    {
+        _id: "638654c3de59b970ff4e90a3",
+        username: "vikingFanBoi33",
+        password: "password",
+        email: "skolvikes@welovethevikings.com",
+        firstName: "Gary",
+        lastName: "Almes",
+        salary: 65000,
+        title: "Vikings Fan Boy"
+    },
+    {
+        _id: "6386574e41dcb04811296df5",
+        username: "snowblower33",
+        password: "password",
+        email: "starbucksenthusiast@thebestTa.com",
+        firstName: "Katy",
+        lastName: "Vincent",
+        salary: 65000,
+        title: "Nodemon Globally"
+    },
 ]
 
 
