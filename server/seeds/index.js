@@ -41,6 +41,7 @@ async function seedStuff() {
          }
         console.log("Serice inserted ",docs);
     });
+    process.exit();
 }
 
 seedStuff();
