@@ -7,7 +7,7 @@ const deps = [
         currentProjects:["6384e560d47e5fa432fc1a96"],
         completedProjects:["6384e56fa866686855eb9823"],
         workers:["6384e45119649d3552bfe2d9","6384e48fed7162a58300e4a6","6384e4a2dcb683fe0fc6baa9"],
-        icon: "MdDeveloperBoard"
+        icon: "sales-logo.png"
     },
     {
         _id: "6384e59914822919e99485c1",
@@ -16,7 +16,7 @@ const deps = [
         currentProjects:["6384e560d47e5fa432fc1a96"],
         completedProjects:["6384e56fa866686855eb9823"],
         workers:["6384e4fbd2d2bb2ea12aa2df","6384e51f9cf2dc4dfcbf9753","6384e52f097517556533bfe5"],
-        icon: "MdEvStation"
+        icon: "marketing-logo.png"
     },
     {
         _id: "6384e59d7cf6177d42e8570b",
@@ -25,7 +25,7 @@ const deps = [
         currentProjects:["6384e560d47e5fa432fc1a96"],
         completedProjects:["6384e56fa866686855eb9823"],
         workers:["6384e4fbd2d2bb2ea12aa2df"],
-        icon: "TbDeviceMobileMessage"
+        icon: "managment-logo.png"
     },
     {
         _id: "6384e5a206c88f93d4e06e85",
@@ -33,7 +33,8 @@ const deps = [
         description: "This is where all the development oping happens.",
         currentProjects:["6384e560d47e5fa432fc1a96"],
         completedProjects:["6384e56fa866686855eb9823"],
-        workers:["6384e4fbd2d2bb2ea12aa2df"]
+        workers:["6384e4fbd2d2bb2ea12aa2df"],
+        icon: "devops-logo.png"
     },
     {
         _id: "6384e5a648a7e96c93351cb9",
@@ -41,7 +42,8 @@ const deps = [
         description: "They administrate",
         currentProjects:["6384e560d47e5fa432fc1a96"],
         completedProjects:["6384e56fa866686855eb9823"],
-        workers:["6384e4fbd2d2bb2ea12aa2df"]
+        workers:["6384e4fbd2d2bb2ea12aa2df"],
+        icon: "administrator-logo.png"
     },
     {
         _id: "6384e5a956ae2e5fa3e89047",
@@ -49,7 +51,8 @@ const deps = [
         description: "Everyones favorite",
         currentProjects:["6384e560d47e5fa432fc1a96"],
         completedProjects:["6384e56fa866686855eb9823"],
-        workers:["6384e4fbd2d2bb2ea12aa2df"]
+        workers:["6384e4fbd2d2bb2ea12aa2df"],
+        icon: "human-resources-logo.png"
     }
 ]
 

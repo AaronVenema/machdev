@@ -11,36 +11,41 @@ const ServiceRequest = require('../models/ServiceRequest');
 const db = require("../config/connections");
 
 
+
+
 async function seedStuff() {
     console.log("Seeding Employees");
-    Employee.insertMany(employees, (error,docs) => {
+    await Employee.insertMany(employees, (error,docs) => {
         if(error){
            console.log(error); 
         }
-        console.log("Employees Inserted ",docs);
+        console.log("Employees Inserted ");
     })
     console.log("Seeding Departments");
-    Department.insertMany(departments, (error,docs) => {
+    await Department.insertMany(departments, (error,docs) => {
         if(error){
             console.log(error); 
          }
-        console.log("Departments Inserted ",docs);
+        console.log("Departments Inserted ");
     });
     console.log("Seeding Projects");
-    Project.insertMany(projects, (error,docs) =>{
+    await Project.insertMany(projects, (error,docs) =>{
         if(error){
             console.log(error); 
          }
-        console.log("Projects Inserted ",docs);
+        console.log("Projects Inserted ");
     });
     
     console.log("Seeding Service Requests");
-    ServiceRequest.insertMany(service, (error,docs) => {
+    await ServiceRequest.insertMany(service, (error,docs) => {
         if(error){
             console.log(error); 
          }
-        console.log("Serice inserted ",docs);
+        console.log("Serice inserted ");
+        process.exit();
     });
 }
 
 seedStuff();
+
+// process.exit();

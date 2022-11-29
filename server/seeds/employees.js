@@ -20,7 +20,7 @@ const emps = [
         firstName: "John",
         lastName: "Bob",
         salary: 85000,
-        title: "Head architect"
+        title: "Head Architect"
     },
     {
         _id: "6384e4a2dcb683fe0fc6baa9",
