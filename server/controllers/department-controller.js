@@ -12,7 +12,7 @@ const getAllDepartments = async (req, res) => {
   catch(err) {
     res.status(400).json({ message: "No departments found!" });
   }
-}
+};
 
 const getDepartmentById = async (req, res) => {
   try {
@@ -22,56 +22,63 @@ const getDepartmentById = async (req, res) => {
   catch(err) {
     res.status(400).json({ message: "No department found with that ID!" });
   }
-}
+};
 
 const createDepartment = async (req, res) => {
   try {
     const createQuery = await Department.create(req.body);
-    res.status(200).json(createQuery);
+    res.status(200).json({result: "success", payload: createQuery});
   }
   catch(err) {
     res.status(400).json({ message: "Unable to create a department" });
   }
-}
+};
 
 const putCurrProject = async (req, res) => {
   try {
+    const projHolder = await Project.findById(req.params.projectId);
     try {
-      await Project.findById(req.params.projectId);
       const updateByIdQuery = await Department.findOneAndUpdate(
-        { _id: req.params.id },
-        { $addToset: req.body },
+        { _id: req.params.departmentId },
+        { $push: {currentProjects: req.params.projectId} },
         { runValidators: true, new: true }
       );
       res.status(200).json({ result: "success", payload: updateByIdQuery});
     }
     catch(err) {
-      res.status(400).json({ message: "No project found with that ID!" });
+      res.status(400).json({ message: "No department found with that ID!" });
     }
   }
   catch(err) {
-    res.status(400).json({ message: "No department found with that ID!" });
+    res.status(400).json({ message: "No project found with that ID!" });
   }
 };
 
 const putCompProject = async (req, res) => {
   try {
+    const projHolder = await Project.findById(req.params.projectId);
     try {
-      await Project.findById(req.params.projectId);
-      const updateByIdQuery = await Department.findOneAndUpdate(
-        { _id: req.params.id },
-        { $pull: req.body },
-        { $addToset: {completedProjects: req.body}},
+      // This feels very ugly, there must be a way to chain together multiple field updates
+      const pullQuery = await Department.findOneAndUpdate(
+        { _id: req.params.departmentId },
+        { $pull: {currentProjects: req.params.projectId}},
         { runValidators: true, new: true }
       );
-      res.status(200).json({ result: "success"});
+
+      const updateByIdQuery = await Department.findOneAndUpdate(
+        { _id: req.params.departmentId },
+        { $push: {completedProjects: req.params.projectId} },
+        { runValidators: true, new: true }
+      );
+
+      res.status(200).json({ result: "success", payload: updateByIdQuery });
     }
     catch(err) {
-      res.status(400).json({ message: "No project found with that ID!" });
+      res.status(400).json({ message: "No department found with that ID!" });
     }
    }
   catch(err) {
-    res.status(400).json({ message: "No department found with that ID!" });
+    res.status(400).json({ message: "No project found with that ID!" });
   }
 };
 
@@ -100,7 +107,7 @@ const deleteDepartmentById = async (req,res) => {
   catch(err) {
     res.status(400).json({ message: "No department found with that ID!" });
   }
-}
+};
 
 module.exports = {
   getAllDepartments, 
@@ -110,4 +117,4 @@ module.exports = {
   putCompProject,
   updateDepartmentById,
   deleteDepartmentById,
-}
+};
