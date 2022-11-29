@@ -11,7 +11,6 @@ const empDef = {
   "CIO": "cio-logo.png",
   "SEO": "seo-logo.png",
   "ALP": "alp-logo.png"
-
 }
 
 
