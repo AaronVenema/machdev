@@ -38,7 +38,8 @@ const employeeSchema = new Schema(
   }
 );
 
-// hash user password
+
+
 employeeSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;

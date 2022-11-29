@@ -14,13 +14,14 @@ const db = require("../config/connections");
 
 
 async function seedStuff() {
+
+
     console.log("Seeding Employees");
-    await Employee.insertMany(employees, (error,docs) => {
-        if(error){
-           console.log(error); 
-        }
-        console.log("Employees Inserted ");
-    })
+    for(let e of employees){
+        console.log(e.firstName);
+        await Employee.create({...e})
+    }
+    console.log("Employees Inserted ");
     console.log("Seeding Departments");
     await Department.insertMany(departments, (error,docs) => {
         if(error){
