@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Image, Segment, Statistic} from 'semantic-ui-react'
+import { Grid, Image, Segment} from 'semantic-ui-react'
 
 const HpGrid = () => (
   <Grid className='justify-content-center'>

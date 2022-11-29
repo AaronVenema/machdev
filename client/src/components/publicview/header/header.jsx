@@ -11,7 +11,6 @@ function Header (){
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-            <Nav.Link as={Link} to="/companyInfo">Info</Nav.Link>
             <Nav.Link as={Link} to="/completedProjects" >MachDev Works</Nav.Link>
             <Nav.Link as={Link} to="/departmentView">Departments</Nav.Link>
             <Nav.Link as={Link} to="/employeeView">Employees</Nav.Link>
