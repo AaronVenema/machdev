@@ -19,9 +19,9 @@ router.route("/:id").get(getDepartmentById);
 router.route("/").post(createDepartment);
 
 // route for adding a project to a department's current projects
-router.route("/:id/current").put(putCurrProject);
+router.route("/:departmentId/current/:projectId").put(putCurrProject);
 // route for adding a project to a department's completed projects from current projects
-router.route("/:id/complete").put(putCompProject);
+router.route("/:departmentId/complete/:projectId").put(putCompProject);
 // route for updating a department by its id
 router.route("/:id").put(updateDepartmentById);
 
