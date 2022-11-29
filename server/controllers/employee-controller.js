@@ -1,4 +1,5 @@
 const Employee = require("../models/Employee");
+const Department = require("../models/Department");
 const jwt = require("jsonwebtoken");
 const cookie = require("cookie");
 const bcrypt = require("bcrypt");
@@ -46,7 +47,7 @@ const getEmployeeById = async (req, res) => {
 const createEmployee = async (req, res) => {
   try {
     const createQuery = await Employee.create(req.body);
-    res.status(200).json(createQuery);
+    res.status(200).json({result: "success", payload: createQuery});
   }
   catch(err) {
     res.status(400).json({ message: "Unable to create an employee" });
@@ -86,6 +87,12 @@ const updateEmployeeById = async (req, res) => {
 const deleteEmployeeById = async (req,res) => {
   try {
     const delByIdQuery = await Employee.findOneAndDelete({ _id: req.params.id });
+
+    const depDelQuery = await Department.findOneAndUpdate(
+      { workers : req.params.id },
+      { $pull: {workers: req.params.id} },
+      { runValidators: true, new: true }
+    );
 
     res.status(200).json({ result: "success", payload: delByIdQuery });
   }
