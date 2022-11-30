@@ -8,10 +8,10 @@ const CpGrid = ({ single }) => {
     <Image src={`images/${single.image}`} />
     </Grid.Column>
     <Grid.Column className="mt-4 justify-content-evenly">
-      <Segment className='d-flex m-4  text-wrap text-center justify-content-evenly bg-secondary text-white' style={{ fontSize: "1vw" }} > {single.name} </Segment>
+      <Segment className='d-flex m-4  text-center justify-content-evenly bg-secondary text-white' style={{ fontSize: ".8vw" }} > {single.name} </Segment>
     </Grid.Column>
     <Grid.Column className="mt-4 justify-content-evenly">
-      <Segment className='d-flex m-4  text-wrap text-center justify-content-evenly bg-secondary text-white' style={{ fontSize: "1vw" }}> {single.description} </Segment>
+      <Segment className='d-flex m-4  text-center justify-content-evenly bg-secondary text-white' style={{ fontSize: ".8vw" }}> {single.description} </Segment>
     </Grid.Column>
     </Grid>
   )
