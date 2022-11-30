@@ -12,7 +12,14 @@ import CompletedProjects from './components/publicview/completedprojects/complet
 import Homepage from "./components/publicview/homepage/homepage";
 import ServiceRequest from "./components/publicview/servicerequest/servicerequest"
 import EmployeeLogin from "./components/publicview/employeelogin/employeelogin"
+import CurrentProjects from "./components/internalview/currentprojects/currentprojects"
+import EmployeeLogout from "./components/internalview/employeelogout/employeelogout"
+import IHomepage from "./components/internalview/ihomepage/iHomepage";
+import PmBoard from "./components/internalview/projectsmessageboard/pmBoard";
 function App() {
+  const [user, setUser] = React.useState(null)
+  const handlelogin = () => setUser ({})
+  const handlelogout = () => setUser(null)
   return (
     <Router>
     <Routes>
@@ -22,6 +29,11 @@ function App() {
       <Route path="/completedProjects" element={<CompletedProjects />} />
       <Route path="/serviceRequest" element={<ServiceRequest />} />
       <Route path="/employeeLogin" element={<EmployeeLogin />} />
+      {/* internal view */}
+      <Route path="/currentProjects" element={<CurrentProjects />} />
+      <Route path="/employeeLogout" element={<EmployeeLogout />} />
+      <Route path="/iHomepage" element={<IHomepage />} />
+      <Route path="/pmBoard" element={<PmBoard />} />
       <Route path="*" element={<Navigate to="/"/>} />
     </Routes>
 </Router>
