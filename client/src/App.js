@@ -12,20 +12,23 @@ import CompletedProjects from './components/publicview/completedprojects/complet
 import Homepage from "./components/publicview/homepage/homepage";
 import ServiceRequest from "./components/publicview/servicerequest/servicerequest"
 import EmployeeLogin from "./components/publicview/employeelogin/employeelogin"
+import { AppProvider } from "./components/publicview/utils/AppContext"
+
 function App() {
   return (
-    <Router>
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/employeeView" element={<EmployeeView />} />
-      <Route path="/departmentView" element={<DepartmentView />} />
-      <Route path="/completedProjects" element={<CompletedProjects />} />
-      <Route path="/serviceRequest" element={<ServiceRequest />} />
-      <Route path="/employeeLogin" element={<EmployeeLogin />} />
-      <Route path="*" element={<Navigate to="/"/>} />
-    </Routes>
-</Router>
-       
+    <AppProvider value={{}}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/employeeView" element={<EmployeeView />} />
+          <Route path="/departmentView" element={<DepartmentView />} />
+          <Route path="/completedProjects" element={<CompletedProjects />} />
+          <Route path="/serviceRequest" element={<ServiceRequest />} />
+          <Route path="/employeeLogin" element={<EmployeeLogin />} />
+          <Route path="*" element={<Navigate to="/"/>} />
+        </Routes>
+      </Router>
+    </AppProvider>
   );
 }
 
