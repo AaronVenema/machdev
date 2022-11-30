@@ -12,7 +12,7 @@ import CompletedProjects from './publicview/completedprojects/completedprojects'
 import Homepage from "./publicview/homepage/homepage";
 import ServiceRequest from "./publicview/servicerequest/servicerequest"
 import EmployeeLogin from "./publicview/employeelogin/employeelogin"
-
+import ISRequest from "./internalview/iServiceRequest/iServiceRequest";
 
 const Nav = () =>{
     const { appState } = useAppContext();
@@ -27,6 +27,7 @@ const Nav = () =>{
             {appState.employee &&
                 <>
                     <Route path="/currentProjects" element={<CurrentProjects />} />
+                    <Route path="/iServiceRequest" element={<ISRequest />} />
                     <Route path="/employeeLogout" element={<EmployeeLogout />} />
                     <Route path="/iHomepage" element={<IHomepage />} />
                     <Route path="/pmBoard" element={<PmBoard />} />

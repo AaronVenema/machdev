@@ -12,7 +12,7 @@ function IHeader (){
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
             <Nav.Link as={Link} to="/currentProjects" >Projects</Nav.Link>
-            <Nav.Link as={Link} to="/serviceRequest">Incoming Requests</Nav.Link>
+            <Nav.Link as={Link} to="/iServiceRequest">Incoming Requests</Nav.Link>
             <Nav.Link as={Link} to="/employeeLogout">Employee Logout</Nav.Link>
             </Nav>
           </Navbar.Collapse>

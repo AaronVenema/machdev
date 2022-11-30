@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
-import CurrentProjectsGrid from "./currentProjectsGrid"
+import ISRGrid from "./iSRGrid"
 import { Container } from "semantic-ui-react"
 import IHeader from "../header/iheader"
 import IFooter from "../footer/ifooter"
-function CurrentProjects() {
+function ISRequest() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("/api/project")
+    fetch("/api/serviceRequest")
       .then(response => response.json())
       .then(datas => setData(datas.payload));
   }, []);
@@ -16,7 +16,7 @@ function CurrentProjects() {
       <IHeader />
           {console.log(data)}
           {data && data.map((single) =>
-            <CurrentProjectsGrid single={single} key={single.name} />
+            <ISRGrid single={single} key={single.name} />
           )}
       <IFooter />
     </Container>
@@ -24,4 +24,4 @@ function CurrentProjects() {
   )
 }
 
-export default CurrentProjects
+export default ISRequest
