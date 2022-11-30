@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import CurrentProjectsGrid from "./currentProjectsGrid"
 import { Container } from "semantic-ui-react"
 import IHeader from "../header/iheader"
-import IFooter from "../footer/ifooter"
+import IFooter from "../footer/ifooter" 
+
 function CurrentProjects() {
   const [data, setData] = useState(null);
 

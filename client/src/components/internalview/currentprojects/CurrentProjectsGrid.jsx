@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Image, Segment } from 'semantic-ui-react'
 
+
 const CurrentProjectsGrid = ({ single }) => {
   return (
     <Grid columns={3} divided className='justify-content-evenly'>
