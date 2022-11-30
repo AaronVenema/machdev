@@ -6,6 +6,7 @@ import IFooter from "../footer/ifooter"
 function IHomepage() {
   return (
     <Container>
+      {/* {console.log('REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')} */}
       <IHeader />
       <IHpGrid />
       <IFooter />

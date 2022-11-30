@@ -7,7 +7,7 @@ function IHeader (){
     return(
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container className="text-center">
-        <Navbar.Brand as={Link} to="/"> Home</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/iHomepage"> Home</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
