@@ -59,10 +59,14 @@ const putCompProject = async (req, res) => {
     const projHolder = await Project.findById(req.params.projectId);
     try {
       // This feels very ugly, there must be a way to chain together multiple field updates
-      const pullQuery = await Department.findOneAndUpdate(
+      await Department.findOneAndUpdate(
         { _id: req.params.departmentId },
         { $pull: {currentProjects: req.params.projectId}},
         { runValidators: true, new: true }
+      );
+
+      await projHolder.update(
+        { $set: { completed: true } }
       );
 
       const updateByIdQuery = await Department.findOneAndUpdate(
