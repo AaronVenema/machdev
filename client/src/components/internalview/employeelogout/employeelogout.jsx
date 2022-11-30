@@ -3,7 +3,7 @@ import LogoutGrid from "./logoutGrid"
 import { Container } from "semantic-ui-react"
 import IHeader from "../header/iheader"
 import IFooter from "../footer/ifooter"
-function EmployeeLogin() {
+function EmployeeLogout() {
   return (
     <Container>
       <IHeader />
@@ -14,4 +14,4 @@ function EmployeeLogin() {
   )
 }
 
-export default EmployeeLogin
+export default EmployeeLogout
