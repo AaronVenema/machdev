@@ -9,7 +9,8 @@
     "start": "node server/server",
     "build": "cd client && react-scripts build",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd client && npm i && cd ../server && npm i"
+    "install": "cd client && npm i && cd ../server && npm i",
+    "seed": "node server/seeds/index"
   },
   "eslintConfig": {
     "extends": [
