@@ -22,7 +22,7 @@ const AppProvider = (props) => {
 
   const logout = () => {
     Cookie.remove("auth-token")
-    window.location.href = "/login"
+    window.location.href = "/employeeLogin"
   }
 
   useEffect(() => {

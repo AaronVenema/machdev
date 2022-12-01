@@ -14,7 +14,10 @@ const db = require("../config/connections");
 
 
 async function seedStuff() {
-
+    await Employee.remove({});
+    await Department.remove({});
+    await Project.remove({});
+    await ServiceRequest.remove({});
 
     console.log("Seeding Employees");
     for(let e of employees){
