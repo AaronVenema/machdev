@@ -8,7 +8,7 @@ import IHomepage from "./internalview/ihomepage/iHomepage";
 import PmBoard from "./internalview/projectsmessageboard/pmBoard";
 import EmployeeView from "./publicview/employeeviewer/employeeview";
 import DepartmentView from "./publicview/departmentviewer/departmentview";
-import CompletedProjects from './publicview/completedprojects/CompletedProjects';
+import CompletedProjects from './publicview/completedprojects/completedprojects';
 import Homepage from "./publicview/homepage/homepage";
 import ServiceRequest from "./publicview/servicerequest/servicerequest"
 import EmployeeLogin from "./publicview/employeelogin/employeelogin"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import CpGrid from "./cpGrid"
-import { Container, Grid } from "semantic-ui-react"
+import { Container } from "semantic-ui-react"
 import Header from "../header/header"
 import Footer from "../footer/footer"
 function CompletedProjects() {
