@@ -15,7 +15,7 @@ const proj = [
         workers: ["6384e48fed7162a58300e4a6"],
         image: "hangry.png",
         link: "www.youtube.com",
-        completed: ture,
+        completed: true,
     },
     {
         _id: "63866bd72e5a5353349cbfae",
