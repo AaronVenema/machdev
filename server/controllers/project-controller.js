@@ -38,8 +38,7 @@ const addCommentToBoard = async (req,res)=>{
     const b = await MessageBoard.findOne({projectid: req.params.projectId});
     const m = await Message.create({owner: req.params.employeeId,body: req.body.message,likes: req.body.likes,board: b._id})
     // const message = await Message.create({})
-    res.status(200).json({result: "succes", payload: m})
-
+    res.status(200).json({result: "success", payload: m});
   }catch(err){
     res.status(400).json({message:"Failed to insert"});
   }

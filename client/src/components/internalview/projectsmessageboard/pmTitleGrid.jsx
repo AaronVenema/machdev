@@ -5,11 +5,11 @@ import { Comment, Header } from 'semantic-ui-react'
 // employees
 const PmTitleGrid = ({title}) => (
   <Comment.Group>
-    <Header className="text-white" as='h3' dividing>
-      {title}
+    <Header className="w-100 text-white text-center" as='h1' >
+      {title} Message Board
     </Header>
     {/*{single.title} */}
-    </Comment.Group>
+  </Comment.Group>
 )
 
 export default PmTitleGrid

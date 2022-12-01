@@ -10,8 +10,8 @@ const PmThreadGrid = ({message}) => (
       author fName + Lname
       Text 
      */}
-      <Comment.Content>
-            <Comment.Author className="text-white"as='a'> {message.owner.firstName} {message.owner.lastName}</Comment.Author>
+      <Comment.Content className='bg-secondary text-center w-25'>
+            <Comment.Author className="text-info fw-bold" as='a'> {message.owner.firstName} {message.owner.lastName}</Comment.Author>
           {/* {single.employee} */}
             <Comment.Text className="text-white"> {message.body}</Comment.Text>
           {/* {single.text} */}
