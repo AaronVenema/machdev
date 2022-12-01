@@ -1,4 +1,4 @@
-# Progressive Web Application
+# MachDev
 <br> Repository link: https://github.com/AaronVenema/machdev <br>
 <br> Deployed link : https://machdev.herokuapp.com/ <br>
 ## Table of Contents
