@@ -15,8 +15,11 @@ function CompletedProjects() {
     <Container>
       <Header />
           {console.log(data)}
-          {data && data.map((single) =>
-            <CpGrid single={single} key={single.name} />
+          {data && data.map((single) =>{
+            if(single.completed){
+              return <CpGrid single={single} key={single.name} />
+            }
+          }
           )}
       <Footer />
     </Container>
