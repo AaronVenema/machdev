@@ -6,7 +6,7 @@ const proj = [
         workers: ["6384e45119649d3552bfe2d9"],
         image: "smartdesk.png",
         link: "www.youtube.com",
-        completed: true,
+        completed: false,
     },
     {
         _id: "6384e56fa866686855eb9823",
@@ -15,7 +15,7 @@ const proj = [
         workers: ["6384e48fed7162a58300e4a6"],
         image: "hangry.png",
         link: "www.youtube.com",
-        completed: false,
+        completed: ture,
     },
     {
         _id: "63866bd72e5a5353349cbfae",
