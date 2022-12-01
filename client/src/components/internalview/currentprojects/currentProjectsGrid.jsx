@@ -3,11 +3,16 @@ import { Grid, Image, Segment } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 const CurrentProjectsGrid = ({ single }) => {
-  // console.log(single);
+  console.log(single._id);
   return (
     <Grid columns={3} divided className='justify-content-evenly'>
     <Grid.Column className="mt-4 justify-content-evenly">
-    <Image src={`images/${single.image}`} as={Link} to="/pmBoard" />
+    
+    <Link to="/pmBoard" state={{from: single}}>
+      <Image src={`images/${single.image}`} />
+    </Link>
+    {/* <Image src={`images/${single.image}`} as={Link} to="/pmBoard" /> */}
+    {/* <Image src={`images/${single.image}`} as={<Link to={{pathname:"/pmBoard",stuff:{...single}}}/>} /> */}
     {/* need to add link to /pmBoard/_id for specified project message board */}
     </Grid.Column>
     <Grid.Column className="mt-4 justify-content-evenly">

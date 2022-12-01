@@ -3,7 +3,7 @@ import {  Comment } from 'semantic-ui-react'
 // project name 
 // pmBoard
 // employees
-const PmThreadGrid = () => (
+const PmThreadGrid = ({message}) => (
     <Comment>
       {/* dynamically generated from comment
       avatar=icon of user
@@ -11,11 +11,11 @@ const PmThreadGrid = () => (
       Text 
      */}
       <Comment.Content>
-        <Comment.Author className="text-white"as='a'> employee name ph</Comment.Author>
-        {/* {single.employee} */}
-        <Comment.Text className="text-white"> text placeholder</Comment.Text>
-        {/* {single.text} */}
-      </Comment.Content>
+            <Comment.Author className="text-white"as='a'> {message.owner.firstName} {message.owner.lastName}</Comment.Author>
+          {/* {single.employee} */}
+            <Comment.Text className="text-white"> {message.body}</Comment.Text>
+          {/* {single.text} */}
+        </Comment.Content>
     </Comment>
 )
 

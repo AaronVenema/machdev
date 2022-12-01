@@ -3,10 +3,11 @@ const Message = require("./Message");
 const boardSchema = new Schema(
   {
     messages:{
-        type: [Message]
+        type: [Schema.Types.ObjectId],
+        ref: 'Messages'
     },
     projectid:{
-        type: [Schema.Types.ObjectId],
+        type: Schema.Types.ObjectId,
         ref: 'Project'
     }
 

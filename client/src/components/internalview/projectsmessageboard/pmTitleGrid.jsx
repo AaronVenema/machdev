@@ -3,10 +3,10 @@ import { Comment, Header } from 'semantic-ui-react'
 // project name 
 // pmBoard
 // employees
-const PmTitleGrid = () => (
+const PmTitleGrid = ({title}) => (
   <Comment.Group>
     <Header className="text-white" as='h3' dividing>
-      title placeholder
+      {title}
     </Header>
     {/*{single.title} */}
     </Comment.Group>
