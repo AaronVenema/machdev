@@ -33,8 +33,7 @@ function IHeader (){
           <Nav className="me-auto">
           <Nav.Link as={Link} to="/currentProjects" >Projects</Nav.Link>
           <Nav.Link as={Link} to="/iServiceRequest">Incoming Requests</Nav.Link>
-          <Nav.Link as={Link} to="/employeeLogin" onClick={handleLogout}>Employee Logout</Nav.Link>
-          {/* ^ Even though the above is a valid extension its getting pushed to the catch all */}
+          <Nav.Link  onClick={handleLogout}>Employee Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
