@@ -37,7 +37,7 @@ const ElGrid = () => {
   }
 
   useEffect(() => {
-    if( appState && appState.employee ) window.location.href = "/"
+    if( appState.employee ) window.location.href = "/iHomepage"
   }, [appState]);
 
   return (
