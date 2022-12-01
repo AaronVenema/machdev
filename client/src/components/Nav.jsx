@@ -3,7 +3,6 @@ import {Routes, Route, Navigate} from "react-router-dom";
 import { useAppContext } from "./publicview/utils/AppContext";
 
 import CurrentProjects from "./internalview/currentprojects/currentprojects"
-import EmployeeLogout from "./internalview/employeelogout/employeelogout"
 import IHomepage from "./internalview/ihomepage/iHomepage";
 import PmBoard from "./internalview/projectsmessageboard/pmBoard";
 import EmployeeView from "./publicview/employeeviewer/employeeview";
@@ -28,7 +27,6 @@ const Nav = () =>{
                 <>
                     <Route path="/currentProjects" element={<CurrentProjects />} />
                     <Route path="/iServiceRequest" element={<ISRequest />} />
-                    <Route path="/employeeLogout" element={<EmployeeLogout />} />
                     <Route path="/iHomepage" element={<IHomepage />} />
                     <Route path="/pmBoard" element={<PmBoard />} />
                 </>
