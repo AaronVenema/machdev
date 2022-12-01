@@ -10,8 +10,11 @@ function PmBoard() {
     <Container>
       <IHeader />
       <PmTitleGrid />
+      {/* need to add fetch for title for specified project message board */}
       <PmThreadGrid />
+      {/* need to add fetch for thread for specified project message board */}
       <PmReplyGrid />
+      {/* need to add post for reply for specified project message board */}
       <IFooter />
     </Container>
      
