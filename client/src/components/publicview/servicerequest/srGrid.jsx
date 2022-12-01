@@ -3,31 +3,41 @@ import { Form, Message} from 'semantic-ui-react'
 
 const SrGrid = () => {
   const [userData, setUserData] = useState({
-    name: '',
-    last: '',
+    firstname: '',
+    lastname: '',
     email: '',
     request: ''
   })
+
   const [ formMessage, setFormMessage ] = useState({ type: "", msg: "" });
 
   const handleInputChange = (e) => {
    setUserData({ ...userData, [e.target.name]: e.target.value })
   }
+
   const handleRequest = async (e) => {
     e.preventDefault();
-    const bodyHolder = {name:userData.name.concat(userData.last), description: userData.request, completed: false}
-    const postedProjects = await fetch("/api/project", {
+    const postedServiceRequest = await fetch("/api/servicerequest", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(bodyHolder)
+      body: JSON.stringify(userData)
     })
-    const newProject = await postedProjects.json();
-    console.log(newProject)
-    if( newProject.result === 'success'){
-      setFormMessage ({ type: "green", msg: "Project Submitted"})
+    const newServiceRequest = await postedServiceRequest.json();
+    console.log(newServiceRequest);
+    if( newServiceRequest.result === 'success'){
+      setFormMessage ({ type: "green", msg: "Project Submitted"});
+      setUserData({
+        firstname: '',
+        lastname: '',
+        email: '',
+        request: ''
+      });
     }
-    else { setFormMessage({ type: "red", msg: "uh oh, somthing went wrong, please try again later" });}
+    else { 
+      setFormMessage({ type: "red", msg: "uh oh, somthing went wrong, please try again later" });
+    }
   }
+
   return (
     <>
     <Form onSubmit={handleRequest}>
@@ -36,15 +46,15 @@ const SrGrid = () => {
           className='bg-summary'
           fluid label='First name'
           placeholder='First name'
-          name='name'
-          value={userData.name}
+          name='firstname'
+          value={userData.firstname}
           onChange={handleInputChange}
         />
         <Form.Input required={true}
           fluid label='Last name'
           placeholder='Last name'
-          name='last'
-          value={userData.last}
+          name='lastname'
+          value={userData.lastname}
           onChange={handleInputChange} />
 
         <Form.Input required={true}
@@ -65,7 +75,7 @@ const SrGrid = () => {
     </Form>
       { formMessage.msg.length > 0 && (
         <Message color={formMessage.type}>
-          <Message.Header>Alert</Message.Header>
+          <Message.Header>Notice</Message.Header>
           <p>
             { formMessage.msg }
           </p>
