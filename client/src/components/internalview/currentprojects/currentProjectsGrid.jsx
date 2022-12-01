@@ -15,9 +15,6 @@ const CurrentProjectsGrid = ({ single }) => {
     <Grid.Column className="mt-4 justify-content-evenly">
       <Segment className='d-flex m-4  text-center justify-content-evenly bg-secondary text-white' style={{ fontSize: ".8vw" }}> {single.description} </Segment>
     </Grid.Column>
-    <Grid.Column className="mt-4 justify-content-evenly">
-      <Segment className='d-flex m-4  text-center justify-content-evenly bg-secondary text-white' style={{ fontSize: ".8vw" }}> {single.completed} </Segment>
-    </Grid.Column>
     </Grid>
   )
 }
