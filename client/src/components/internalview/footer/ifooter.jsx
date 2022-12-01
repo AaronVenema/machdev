@@ -7,7 +7,7 @@ function IFooter (){
       <Container>
         <Row className="d-flex sticky-bottom bg-dark text-sucess text-center">
           <Navbar className="d-flex justify-content-center">
-         <h3 className="text-center ">MachDev Employee View</h3>
+         <h3 className="text-center text-white">MachDev Employee View</h3>
          </Navbar>
         </Row>
         </Container>
