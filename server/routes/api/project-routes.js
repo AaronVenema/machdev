@@ -9,6 +9,7 @@ const {
   updateProjectById,
   removeEmployeeFromProject,
   deleteProjectById,
+  addCommentToBoard
 } = require("../../controllers/project-controller");
 
 //route for getting every project
@@ -25,6 +26,7 @@ router.route("/").post(createProject);
 router.route("/:projectId/employee/:employeeId").put(putEmployeeOnProject);
 // route for updating a proejct
 router.route("/:id").put(updateProjectById);
+router.route("/:projectId/:employeeId").post(addCommentToBoard);
 
 // route form removing an employee from a project's workers array
 router.route("/:projectId/employee/:employeeId").delete(removeEmployeeFromProject);

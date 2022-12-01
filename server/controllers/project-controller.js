@@ -32,6 +32,20 @@ const getProjectById = async (req, res) => {
   }
 };
 
+
+const addCommentToBoard = async (req,res)=>{
+  try{
+    const b = await MessageBoard.findOne({projectid: req.params.projectId});
+    const m = await Message.create({owner: req.params.employeeId,body: req.body.message,likes: req.body.likes,board: b._id})
+    // const message = await Message.create({})
+    res.status(200).json({result: "succes", payload: m})
+
+  }catch(err){
+    res.status(400).json({message:"Failed to insert"});
+  }
+}
+
+
 const createProject = async (req, res) => {
   try {
     const createQuery = await Project.create(req.body);
@@ -149,4 +163,5 @@ module.exports = {
   updateProjectById,
   removeEmployeeFromProject,
   deleteProjectById,
+  addCommentToBoard
 };
