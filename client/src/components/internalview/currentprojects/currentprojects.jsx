@@ -15,7 +15,6 @@ function CurrentProjects() {
   return (
     <Container>
       <IHeader />
-          {console.log(data)}
           {data && data.map((single) =>{
             if(!single.completed){
               return <CurrentProjectsGrid single={single} key={single.name} />

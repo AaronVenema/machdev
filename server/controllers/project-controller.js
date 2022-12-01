@@ -1,6 +1,8 @@
 const Project = require("../models/Project");
 const Department = require("../models/Department");
 const Employee = require("../models/Employee");
+const MessageBoard = require("../models/MessageBoard");
+const Message = require("../models/Message");
 const connection = require("../config/connections");
 
 require("dotenv").config();
@@ -8,6 +10,7 @@ require("dotenv").config();
 const getAllProjects = async (req, res) => {
   try {
     const getAllQuery = await Project.find({});
+    // res.status(200).json({ result: "success", payload: getAllQuery });
     res.status(200).json({ result: "success", payload: getAllQuery });
   }
   catch(err) {
@@ -18,12 +21,30 @@ const getAllProjects = async (req, res) => {
 const getProjectById = async (req, res) => {
   try {
     const getByIdQuery = await Project.findById(req.params.id)
-    res.status(200).json({ result: "success", payload: getByIdQuery });
+    const getMboard = await MessageBoard.findOne({projectid: getByIdQuery._id});
+    const messages = await Message.find({board: getMboard._id}).populate({path: "owner",select: "firstName lastName email"}).exec();
+    // console.log(getMboard);
+    // console.log(messages);
+    res.status(200).json({ result: "success", payload: {getByIdQuery,getMboard,messages} });
   }
   catch(err) {
     res.status(400).json({ message: "No project found with that ID!" });
   }
 };
+
+
+const addCommentToBoard = async (req,res)=>{
+  try{
+    const b = await MessageBoard.findOne({projectid: req.params.projectId});
+    const m = await Message.create({owner: req.params.employeeId,body: req.body.message,likes: req.body.likes,board: b._id})
+    // const message = await Message.create({})
+    res.status(200).json({result: "succes", payload: m})
+
+  }catch(err){
+    res.status(400).json({message:"Failed to insert"});
+  }
+}
+
 
 const createProject = async (req, res) => {
   try {
@@ -142,4 +163,5 @@ module.exports = {
   updateProjectById,
   removeEmployeeFromProject,
   deleteProjectById,
+  addCommentToBoard
 };
