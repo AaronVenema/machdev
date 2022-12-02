@@ -4,13 +4,13 @@ import {  Comment } from 'semantic-ui-react'
 // pmBoard
 // employees
 const PmThreadGrid = ({message}) => (
-    <Comment>
+    <Comment >
       {/* dynamically generated from comment
       avatar=icon of user
       author fName + Lname
       Text 
      */}
-      <Comment.Content className='bg-secondary text-center w-25'>
+      <Comment.Content className='bg-secondary text-center w-25 '>
             <Comment.Author className="text-info fw-bold" as='a'> {message.owner.firstName} {message.owner.lastName}</Comment.Author>
           {/* {single.employee} */}
             <Comment.Text className="text-white"> {message.body}</Comment.Text>
