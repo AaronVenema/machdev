@@ -8,6 +8,8 @@
 
 * [Installation](#Installation)
 
+* [Instructrions](#Instructions)
+
 * [Contributors](#Contributors)
 
 
@@ -20,6 +22,9 @@ MachDev is a web application that provides a way to dynamically generate a compa
 
 ### Installation
 git clone https://github.com/AaronVenema/machdev.git && NPM I
+
+### Instructions
+To view internal pages, please use employee login and email1@email.com as email and password as password.
 
 ### Contributors
 <br> Aaron Venema <br>
